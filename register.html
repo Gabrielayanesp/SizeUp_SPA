@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onHeel | Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- LEFT SIDE -->
+        <div class="left">
+            <div class="logo">
+                <img src="image/logo_sin_fondo-Photoroom.png" alt="onHeel Logo">
+            </div>
+            <h2 class="tagline">
+                Join onHeels and start exploring the best fashion stores in Barranquilla
+            </h2>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="right">
+            <div class="form-box">
+                <form id="registerForm">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+                    <!-- SELECT ROLE -->
+                    <select id="role" required>
+                        <option value="" disabled selected>Select your role</option>
+                        <option value="customer">Customer</option>
+                        <option value="seller">Seller</option>
+                    </select>
+
+                    <button type="submit" class="btn-primary">Sign Up</button>
+                </form>
+
+                <hr>
+
+                <div class="login-link">
+                    <p>Already have an account? <a href="login.html">Log In</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="register.js"></script>
+</body>
+
+</html>
