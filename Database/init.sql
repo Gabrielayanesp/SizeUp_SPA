@@ -28,11 +28,11 @@ created_at TIMESTAMP DEFAULT NOW()
 -- Tabla de ventas --
 CREATE TABLE sales(
 id_sales SERIAL PRIMARY KEY,
-user_id INT NOT NULL,
+id_user INT NOT NULL,
 id_product INT NOT NULL,
 quantity INT NOT NULL,
 total DECIMAL(10,2),
 created_at TIMESTAMP DEFAULT NOW(),
-FOREIGN KEY (user_id) REFERENCES users(id_user),
+FOREIGN KEY (id_user) REFERENCES users(id_user),
 FOREIGN KEY (id_product) REFERENCES products(id_product)
 );
