@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff69b4, #ffffff, #9b59b6);
+    min-height: 100vh;
+    color: #2c2c2c;
+}
+
+/* Header Styles */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 182, 193, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(255, 105, 180, 0.3);
+}
+  
+.extra {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    animation: pulse 2s infinite;
+}
+  
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+  
+nav a {
+    text-decoration: none;
+    color: #d63384;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    font-size: 12px;
+}
+  
+nav a:hover {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+}
+  
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    padding: 5px;
+}
+  
+.logo img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+  
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* tittle Section */
+.tittle-admin {
+    display: flex;             /* Cambia la disposición a horizontal */
+    align-items: center;       /* Centra verticalmente la estrella y el título */
+    justify-content: center;   /* Centra horizontalmente todo el contenido */
+    gap: 15px;                 /* Espacio entre la estrella y el título */
+    margin: 40px 0;
+    font-size: 30px;
+}
+
+.icon{
+    font-size: 50px;
+    animation: rotate 4s linear infinite;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px #ffb6c1);
+}
+
+.tittle-admin h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 900;
+    background: linear-gradient(45deg, #6a1b9a, #6a1b9a , #6a1b9a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+    margin-bottom: 30px;
+}
+
+.admin-img {
+    display: flex;
+    justify-content: center;      /* centers horizontally */
+    align-items: center;          /* centers vertically if height is available */
+    margin: 30px auto;            /* spacing and centered within main */
+    width: 100%;
+    max-width: 600px;             /* takes up a considerable space on large screens */
+    padding: 12px;                /* inner space for the outline */
+    border-radius: 20px;          /* rounded container corners */
+    background: linear-gradient(180deg, rgba(255,182,193,0.06), rgba(255,182,193,0.02));
+    box-shadow: 0 10px 30px rgba(150, 50, 100, 0.08);
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+    overflow: hidden;             /* ensures the image respects rounded borders */
+    border: 3px solid rgba(255,105,180,0.18); /* subtle pink outline to match background */
+}
+
+/* image inside the container */
+.admin-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 420px;            /* limits height so it won’t overflow */
+    object-fit: cover;            /* fills while maintaining ratio, crops if needed */
+    border-radius: 14px;          /* inner radius so the image looks rounded too */
+    box-shadow: 0 8px 24px rgba(255,105,180,0.12), inset 0 1px 0 rgba(255,255,255,0.03);
+    border: 4px solid rgba(255,182,193,0.12); /* small extra border for highlight */
+    transform: translateY(0);
+    transition: transform 0.8s cubic-bezier(.22,.9,.34,1), filter 0.4s ease;
+    will-change: transform;
+    animation: floatY 6s ease-in-out infinite;
+}
+
+/* interactive hover effect (optional but attractive on desktop) */
+.admin-img:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(150, 50, 100, 0.12);
+}
+.admin-img:hover img {
+    transform: translateY(-6px) scale(1.02);
+    filter: saturate(1.06) contrast(1.02);
+}
+
+/* subtle floating vertical movement animation */
+@keyframes floatY {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.all-store, .all-users {
+    margin: 40px auto;
+    padding: 20px;
+    border: 2px solid rgba(255,105,180,0.25);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 20px rgba(150, 50, 100, 0.1);
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.all-store:hover, .all-users:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(150, 50, 100, 0.15);
+}
+
+.all-store h2, .all-users h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #6a1b9a;
+    text-shadow: 1px 1px 3px rgba(255, 105, 180, 0.25);
+}
+
+/* Cards inside */
+.admin-card, .user-card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255,105,180,0.25);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 600;
+    color: #2c2c2c;
+    box-shadow: 0 4px 10px rgba(255,105,180,0.08);
+}
+
+.admin-card:hover, .user-card:hover {
+    background: linear-gradient(135deg, #ffe6f0, #fff);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 105, 180, 0.18);
+}
+
+
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+}
+  
+footer p {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+  
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+  
+.social-links a {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+  
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px) scale(1.1);
+}
+  
+.social-links img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+}
+  
+.contact-info {
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+  
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo {
+        position: static;
+        transform: none;
+        margin: 10px auto;
+    }
+  
+    nav {
+        padding: 10px;
+        gap: 10px;
+    }
+  
+    nav a {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+  
+    .tittle-admin h1 {
+        font-size: 2.5rem;
+    }
+
+    .admin-img {
+        max-width: 92%;
+        padding: 10px;
+        border-radius: 16px;
+        border: 2px solid rgba(255,105,180,0.14);
+    }
+    .admin-img img {
+        max-height: 360px;
+        border-radius: 12px;
+        border: 3px solid rgba(255,182,193,0.10);
+        animation-duration: 5.5s;
+    }
+
+    .all-store, .all-users {
+        max-width: 92%;
+        padding: 15px;
+    }
+    .store-card, .user-card {
+        padding: 12px;
+        font-size: 14px;
+    }
+    .all-store h2, .all-users h2 {
+        font-size: 1.4rem;
+    }
+}
+
+  
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+  
+    .social-links {
+        gap: 15px;
+    }
+
+    .admin-img {
+        margin: 20px auto;
+        padding: 8px;
+        border-radius: 12px;
+        box-shadow: none;
+        border: 2px solid rgba(255,105,180,0.12);
+    }
+    .admin-img img {
+        max-height: 260px;
+        border-radius: 10px;
+        animation-duration: 5s;
+    }
+
+    .all-store, .all-users {
+        max-width: 95%;
+        padding: 12px;
+    }
+    .store-card, .user-card {
+        padding: 10px;
+        font-size: 13px;
+    }
+    .all-store h2, .all-users h2 {
+        font-size: 1.2rem;
+    }
+}
+  
