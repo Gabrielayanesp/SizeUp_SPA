@@ -1,0 +1,19 @@
+async function addOrder(req, res) {
+    try {
+        const { id_user, total } = req.body;
+
+        if (!id_user || !total) {
+            return res.status(400).json({ error: "Required fields are missing" });
+        }
+
+        const result = await pool.query(
+            "INSERT INTO orders (id_user, total) VALUES ($1, $2) RETURNING *",
+            [id_user, total]
+        );
+
+        res.status(201).json(result.rows[0]);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Error creating order" });
+    }
+}
