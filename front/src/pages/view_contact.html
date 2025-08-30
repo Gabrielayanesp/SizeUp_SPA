@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Metadatos para el navegador y SEO-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tienda de artesanías colombianas,Compra productos hechos a mano.">
+    <meta name="keywords" content="artesanías, Colombia.">
+    <meta name="sitedomain" content="">
+    <meta name="organization" content="Kateryn Martinez">
+    <meta name="author" content="Kateryn Martinez">
+    <meta name="designer" content="Kateryn Martinez">
+    <meta name="copyright" content="© 2025 KaterynMartinez. All rights reserved">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="15days">
+    <title>sizeUp | Contact Us</title> <!--Titulo de la pagina-->
+    <!--Hoja de estilos externas-->
+    <link rel="stylesheet" href="../css/view_contact.css">
+    <link rel="shortcut icon" href="/public/assets/img/sizeUp-logo.png" type="image/x-icon">
+</head>
+<body>
+    <!--Encabezado con titulo y menu de navegacion principal-->
+    <header>
+        <figure class="logo">
+            <img src="/public/assets/img/sizeUp-logo.png" alt="sizeUp logo">
+        </figure>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a class="log_in" href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!--Contact section-->
+        <section id="contacto">
+            <h2>Contact Us</h2>
+            
+            <!--Description that conects with the user-->
+            <p>If any piece speaks to your heart or you want to explore more of what makes you feel confident and beautiful, reach out to us. 
+                At <strong>SizeUp</strong>, every message is a step toward fashion that’s bold, empowering, and truly you..  
+            </p>
+
+            <!--Contact form-->
+            <form action="/send" method="post">
+                <label for="nombre"><strong>Name</strong></label>
+                <input type="text" id="nombre" placeholder="Your full name" required>
+                <label for="email"><strong>Email Address</strong></label>
+                <input type="email" id="email" placeholder="example@email.com" required>
+                <label for="message"><strong>Message</strong></label>
+                <textarea id="message" rows="2" placeholder="Enter your message here... " required></textarea>
+                <button type="submit" class="login-button">Send</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

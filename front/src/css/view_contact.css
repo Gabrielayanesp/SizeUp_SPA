@@ -1,0 +1,182 @@
+:root {
+    --main-color: #ff80ab;
+    --secondary-color: #ffe4ec;
+    --text-color: #333;
+    --banner-bg: #fff0f6;
+    --transition-time: 0.3s;
+
+    --pink-light: #ffe0ef;
+    --pinky: #fac4db;
+    --barbie: #e55e99;
+    --gray: #f5f5f5;
+    --text-dark: #333;
+    --contact-shadow: rgba(244, 63, 94, 0.2); /* mantenemos sombra rosada */
+
+    --yellow-bright: #F0C42D;   /* Amarillo brillante */
+    --pink-light: #F5A4B8;      /* Rosa suave */
+    --raspberry: #E43F4B;       /* Rojo frambuesa */
+    --white-cream: #F8F8F8;     /* Blanco crema */
+    --text-dark: #333333;       /* Texto oscuro */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('img/plaza-san-nicolas.jpg') center center / cover fixed no-repeat;
+    color: var(--text-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--pink-light);
+    padding: 1px 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 90px;
+    transition: transform var(--transition-time) ease, filter var(--transition-time) ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.logo img:hover {
+    transform: scale(1.1) rotate(-2deg);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3)) brightness(1.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav a {
+    color: var(--barbie);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: color var(--transition-time) ease;
+    font-size: 1rem;
+    padding: 0.3rem 0;
+}
+
+nav a .log_in {
+    color: var(--gray);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: color var(--transition-time) ease;
+    font-size: 1rem;
+    padding: 0.3rem 0;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: width var(--transition-time) ease;
+}
+
+nav a:hover {
+    color: var(--main-color);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav li:last-child a {
+    background: linear-gradient(135deg, var(--barbie), var(--pinky));
+    color: var(--gray);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all var(--transition-time) ease;
+}
+
+nav li:last-child a:hover {
+    background: rgba(255, 255, 255, 0.719);
+    color: var(--main-color);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact section */
+#contacto {
+    padding: 2rem 2rem;
+    text-align: center;
+    max-width: 45rem;
+    margin: 7rem auto;
+    font-family: 'Inter', sans-serif;
+    border-radius: 15px;
+    box-shadow: 0 0 30px var(--contact-shadow);
+    background: radial-gradient(circle, rgba(245, 66, 132, 0.1) 0%, transparent 70%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Form inside contact */
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+}
+
+/* Input fields */
+#contacto input,
+#contacto textarea {
+    padding: 0.7rem;
+    border: 1px solid var(--barbie);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* Submit button */
+.login-button {
+    width: 100%;
+    background: linear-gradient(135deg, var(--barbie), var(--pinky));
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(236, 72, 153, 0.3);
+    transition: all 0.2s ease;
+}
+
+.login-button:hover {
+    background: linear-gradient(135deg, var(--barbie), var(--pinky));
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Animated title in contact */
+#contacto h2 {
+    color: var(--barbie);
+    animation: float 4s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+}
+
+/* keyframes for animation (added float animation to replace 'flotar') */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
