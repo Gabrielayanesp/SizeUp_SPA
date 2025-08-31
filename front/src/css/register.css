@@ -1,296 +1,224 @@
 :root {
-
-    /* paleta 1 */
-    --yellow-bright: #F0C42D;
-    --pink-light: #F5A4B8;
-    --raspberry: #E43F4B;
-    --white-cream: #F8F8F8;
-    --text-dark: #333333;
-
-    /* paleta 2 */
-    --Rosa-fucsia-intenso: #BE1A56;
-    --Rosa-brillante: #F26FC0;
-    --Rosa-pastel-claro: #FBC7F0;
-    --Amarillo-pálido: #FDF6A3;
-    --Amarillo-mostaza: #E4A211;
-
-    /* paleta 3 */
-    --Azul-celeste: #71C7DC;
-    --Verde-turquesa: #3CB7AD;
-    --Durazno-suave: #D8A38E;
-    --Rojo-coral: #E85C43;
-    --Rojo: #D91613;
-
-    /* paleta 4 */
-    --Rojo-anaranjado: #F5523D;
-    --Naranja-brillante: #FF6F00;
-    --Rosa-pálido: #F8C4B7;
-    --Rosa-coral: #F78A8A;
-    --Rosa-intenso: #F82C8A;
-
-    /* paleta 5 */
-    --Rojo-intenso: #F01130;
-    --Rosa-rojizo: #F45171;
-    --Rosa-claro: #F8A2A7;
-    --Amarillo-dorado: #EAB933;
-    --Mostaza: #C9A41D;
-
-    /* paleta 6 */
-    --Verde-oscuro: #2C3D2F;
-    --Rojo-anaranjado-intenso: #D03709;
-    --Naranja-brillante: #FF6A32;
-    --Durazno: #FF9F6C;
-    --Amarillo-cálido: #F9C96D;
-
-    /* paleta 7 */
-    --Rojo-vibrante: #EF3946;
-    --Rosa-suave: #EFA6AB;
-    --Rosa-pálido: #F4C6C8;
-    --Naranja-medio: #F28A44;
-    --Rojo-anaranjado: #E94B30;
-
-    /* paleta 8 */
-    --Verde-intenso: #3B8D23;
-    --Verde-lima-suave: #C4D86B;
-    --Naranja-cálido: #D67A1F;
-    --Amarillo-anaranjado: #F4A609;
-    --Rosa-pálido-beige: #D8B4AA;
-}
-
-* {
+    --soft-coral:  #f8a090;      /* cálido y elegante */
+    --light-peach: #FFD8C2;     /* suave y delicado */
+    --mint-green: #A9E5BB;      /* fresco y veraniego */
+    --pale-yellow: #FFF3B0;     /* luminoso y sutil */
+    --text-dark: #333333;       /* legibilidad */
+  }
+  
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Contenedor principal centrado */
-.container {
+  }
+  
+  .container {
     min-height: 100vh;
-    background: var(--cream-white);
-    /* Nuevo fondo usando paleta 2 */
+    background: var(--light-peach);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem;
-}
-
-/* Grid responsive para layout */
-.login {
+  }
+  
+  .login {
     width: 100%;
     max-width: 1200px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
     align-items: center;
-}
-
-@media (min-width: 1024px) {
+  }
+  
+  @media (min-width: 1024px) {
     .login {
-        grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
     }
-}
-
-/* Sección informativa (oculta en móvil) */
-.section {
+  }
+  
+  .section {
     display: none;
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
     padding: 0 2rem;
-}
-
-@media (min-width: 1024px) {
+  }
+  
+  @media (min-width: 1024px) {
     .section {
-        display: flex;
+      display: flex;
     }
-}
-
-/* Títulos con gradiente */
-.brand-title {
+  }
+  
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .brand-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .brand-title {
     font-size: 3rem;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--raspberry), var(--yellow-bright), var(--pink-light));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+    color: var(--soft-coral);
     margin: 0;
-}
-
-.brand-subtitle {
-    padding-bottom: 2rem;
-    font-size: 1.25rem;
-    color: var(--raspberry-red);
-    font-weight: 500;
-    margin: 0;
-}
-
-/* Tarjeta informativa con fondo blur */
-.info-card {
+  }
+  
+  .brand-subtitle,
+  .welcome-subtitle {
+    color: var(--text-dark);
+  }
+  
+  .info-card {
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(8px);
     border-radius: 1rem;
     padding: 1.5rem;
-    border: 1px solid rgba(228, 63, 75, 0.2);
-    /* Basado en rojo frambuesa */
-    box-shadow: 0 0 15px rgba(228, 63, 75, 0.2);
-}
-
-/* Texto info */
-.info-text {
-    color: #4A4A4A;
+    border: 1px solid rgba(255, 138, 117, 0.2);
+    box-shadow: 0 0 15px rgba(255, 138, 117, 0.2);
+  }
+  
+  .info-text {
+    color: var(--text-dark);
     font-size: 1.125rem;
     line-height: 1.6;
     margin: 0;
-}
-
-/* Círculos decorativos con gradiente */
-.decorative-elements {
+  }
+  
+  /* Bolitas decorativas dentro de su contenedor */
+  .decorative-elements {
     display: flex;
     gap: 1rem;
     align-items: flex-start;
-}
-
-.circle {
+  }
+  
+  .circle {
     border-radius: 50%;
-    opacity: 0.7;
-}
-
-.circle-large {
+  }
+  
+  .circle-large {
     width: 4rem;
     height: 4rem;
-    background: linear-gradient(135deg, var(--yellow-bright), var(--raspberry));
-}
-
-.circle-medium {
+    background: var(--soft-coral);
+    opacity: 0.9;
+  }
+  
+  .circle-medium {
     width: 3rem;
     height: 3rem;
-    background: linear-gradient(135deg, var(--pink-light), var(--yellow-bright));
-    opacity: 0.6;
+    background: var(--mint-green);
+    opacity: 0.8;
     margin-top: 0.5rem;
-}
-
-.circle-small {
+  }
+  
+  .circle-small {
     width: 2rem;
     height: 2rem;
-    background: linear-gradient(135deg, var(--raspberry), var(--pink-light));
-    opacity: 0.5;
+    background: var(--pale-yellow);
+    opacity: 0.8;
     margin-top: 1rem;
-}
-
-/* Sección formulario */
-.form-section {
+  }
+  
+  .form-section {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* Tarjeta del formulario */
-.login-card {
+  }
+  
+  .login-card {
     width: 100%;
     max-width: 28rem;
     background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(228, 63, 75, 0.2);
     border-radius: 1rem;
-    box-shadow: 0 0 30px rgba(228, 63, 75, 0.2);
-}
-
-/* Header del formulario */
-.card-header {
+    box-shadow: 0 0 30px rgba(0,0,0,0.05);
+  }
+  
+  .card-header {
     padding: 2rem 2rem 0;
     text-align: center;
-}
-
-/* Título responsive (oculto en desktop) */
-.mobile-brand {
+  }
+  
+  .mobile-brand {
     margin-bottom: 1rem;
-}
-
-@media (min-width: 1024px) {
+  }
+  
+  @media (min-width: 1024px) {
     .mobile-brand {
-        display: none;
+      display: none;
     }
-}
-
-.mobile-brand-title {
+  }
+  
+  .mobile-brand-title {
     font-size: 1.875rem;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--raspberry-red), var(--bright-yellow), var(--soft-pink));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+    color: var(--soft-coral);
     margin: 0;
-}
-
-/* Títulos de bienvenida */
-.welcome-title {
+  }
+  
+  .welcome-title {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--raspberry-red);
+    color: var(--text-dark);
     margin: 0 0 0.5rem 0;
-}
-
-.welcome-subtitle {
-    color: var(--bright-yellow);
-    margin: 0;
-}
-
-/* Contenido del formulario */
-.card-content {
+  }
+  
+  .welcome-subtitle {
+    color: var(--mint-green);
+  }
+  
+  .card-content {
     padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-}
-
-/* Formulario flex vertical */
-.login-form {
+  }
+  
+  .login-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}
-
-/* Grupos de input */
-.form-group {
+  }
+  
+  .form-group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-}
-
-/* Etiquetas */
-.form-label {
+  }
+  
+  .form-label {
     color: var(--text-dark);
     font-weight: 500;
     font-size: 0.875rem;
-}
-
-/* Inputs estilo */
-.form-input {
+  }
+  
+  .form-input {
     padding: 0.75rem;
-    border: 1px solid var(--soft-pink);
+    border: 1px solid var(--mint-green);
     border-radius: 0.5rem;
     background: rgba(255, 255, 255, 0.7);
     font-size: 1rem;
     transition: all 0.2s ease;
-}
-
-.form-input:focus {
+  }
+  
+  .form-input:focus {
     outline: none;
-    border-color: var(--raspberry-red);
-    box-shadow: 0 0 0 3px rgba(228, 63, 75, 0.1);
-}
-
-.form-input::placeholder {
+    border-color: var(--soft-coral);
+    box-shadow: 0 0 0 3px rgba(255, 138, 117, 0.1);
+  }
+  
+  .form-input::placeholder {
     color: #9ca3af;
-}
-
-/* Botón principal */
-.login-button {
+  }
+  
+  .login-button {
     width: 100%;
-    background: linear-gradient(135deg, var(--raspberry), var(--yellow-bright));
+    background: var(--soft-coral);
     color: white;
     font-weight: 500;
     padding: 0.75rem;
@@ -298,33 +226,62 @@
     border-radius: 0.5rem;
     font-size: 1rem;
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(228, 63, 75, 0.3);
     transition: all 0.2s ease;
-}
-
-.login-button:hover {
-    background: linear-gradient(135deg, var(--raspberry), var(--yellow-bright));
-    box-shadow: 0 6px 20px rgba(228, 63, 75, 0.4);
-    transform: translateY(-1px);
-}
-
-/* Pie de formulario */
-.form-footer {
+  }
+  
+  .login-button:hover {
+    background: var(--mint-green);
+  }
+  
+  .form-footer {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     text-align: center;
-    font-size: 0.9rem;
-    color: var(--raspberry-red);
-}
-
-.form-footer a {
-    color: var(--bright-yellow);
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.form-footer a:hover {
-    color: var(--soft-pink);
-}
+  }
+  
+  .forgot-password {
+    color: var(--soft-coral);
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .forgot-password:hover {
+    color: var(--mint-green);
+  }
+  
+  .create-account-button {
+    width: 100%;
+    color: var(--soft-coral);
+    font-weight: 500;
+    padding: 0.75rem;
+    border: 1px solid var(--soft-coral);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .create-account-button:hover {
+    background: var(--mint-green);
+    color: var(--pale-yellow);
+    border-color: var(--pale-yellow);
+  }
+  
+  .shop-link {
+    text-align: center;
+    padding-top: 1rem;
+  }
+  
+  .shop-text {
+    font-size: 0.875rem;
+    color: var(--text-dark);
+  }
+  
+  .shop-highlight {
+    color: var(--soft-coral);
+    font-weight: 500;
+  }
+  

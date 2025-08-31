@@ -1,71 +1,9 @@
 :root {
-    --main-color: #ff80ab;
-    --secondary-color: #ffe4ec;
-    --text-color: #333;
-    --banner-bg: #fff0f6;
-    --transition-time: 0.3s;
-
-    --pink-light: #ffe0ef;
-    --pinky: #fac4db;
-    --barbie: #e55e99;
-    --gray: #f5f5f5;
-    --text-dark: #333;
-
-    /* paleta 1 */
-    --yellow-bright: #F0C42D; 
-    --pink-light: #F5A4B8; 
-    --raspberry: #E43F4B; 
-    --white-cream: #F8F8F8; 
-    --text-dark: #333333; 
-
-    /* paleta 2 */
-    --Rosa-fucsia-intenso: #BE1A56; 
-    --Rosa-brillante : #F26FC0; 
-    --Rosa-pastel-claro: #FBC7F0; 
-    --Amarillo-pálido: #FDF6A3; 
-    --Amarillo-mostaza: #E4A211; 
-
-    /* paleta 3 */
-    --Azul-celeste: #71C7DC; 
-    --Verde-turquesa: #3CB7AD; 
-    --Durazno-suave: #D8A38E; 
-    --Rojo-coral: #E85C43; 
-    --Rojo: #D91613;
-
-    /* paleta 4 */
-    --Rojo-anaranjado : #F5523D; 
-    --Naranja-brillante: #FF6F00;
-    --Rosa-pálido: #F8C4B7;
-    --Rosa-coral: #F78A8A;
-    --Rosa-intenso: #F82C8A; 
-
-    /* paleta 5 */
-    --Rojo-intenso: #F01130; 
-    --Rosa-rojizo: #F45171; 
-    --Rosa-claro: #F8A2A7; 
-    --Amarillo-dorado: #EAB933;
-    --Mostaza: #C9A41D; 
-
-    /* paleta 6 */
-    --Verde-oscuro: #2C3D2F;
-    --Rojo-anaranjado-intenso : #D03709; 
-    --Naranja-brillante: #FF6A32; 
-    --Durazno: #FF9F6C;
-    --Amarillo-cálido: #F9C96D;
-
-    /* paleta 7 */
-    --Rojo-vibrante: #EF3946; 
-    --Rosa-suave: #EFA6AB; 
-    --Rosa-pálido: #F4C6C8; 
-    --Naranja-medio: #F28A44; 
-    --Rojo-anaranjado: #E94B30; 
-
-    /* paleta 8 */
-    --Verde-intenso: #3B8D23;
-    --Verde-lima-suave : #C4D86B; 
-    --Naranja-cálido: #D67A1F; 
-    --Amarillo-anaranjado : #F4A609; 
-    --Rosa-pálido-beige: #D8B4AA; 
+    --soft-coral:   #fab3a7;      /* cálido y elegante */
+    --light-peach: #FFD8C2;     /* suave y delicado */
+    --mint-green: #A9E5BB;      /* fresco y veraniego */
+    --pale-yellow: #FFF3B0;     /* luminoso y sutil */
+    --text-dark: #333333;       /* legibilidad */
 }
 
 /* Reset básico */
@@ -78,10 +16,9 @@
 /* Tipografía general */
 body {
     font-family: 'Georgia', serif;
-    /* background-color: var(--banner-bg); */
-    color: var(--text-color);
+    background-color: var(--light-peach); /* fondo durazno suave */
+    color: var(--text-dark);
     line-height: 1.7;
-    /* padding: 20px; */
 }
 
 /* Encabezado */
@@ -89,7 +26,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--pink-light);
+    background-color: var(--soft-coral);
     padding: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -108,7 +45,7 @@ header {
     filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3)) brightness(1.1);
 }
 
-
+/* Navegación */
 nav ul {
     list-style: none;
     display: flex;
@@ -119,48 +56,21 @@ nav ul {
 }
 
 nav a {
-    color: #e55e99;
+    color: var(--text-dark);  /* negro */
     text-decoration: none;
     font-weight: 600;
-    position: relative;
     transition: color 0.3s ease;
     font-size: 1rem;
     padding: 0.3rem 0;
-}
-
-nav a .log_in {
-    color: #f5f5f5;
-    text-decoration: none;
-    font-weight: 600;
-    position: relative;
-    transition: color 0.3s ease;
-    font-size: 1rem;
-    padding: 0.3rem 0;
-}
-
-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 2px;
-    background: #ffe4ec;
-    transition: width 0.3s ease;
 }
 
 nav a:hover {
-    color: #ff80ab;
+    color: var(--mint-green); /* solo hover verde */
 }
 
-nav a:hover::after {
-    width: 100%;
-}
-
-
+/* Botón Login */
 nav li:last-child a {
-    background: linear-gradient(135deg, var(--barbie), var(--pinky));
-    --gray: #f5f5f5;
+    background: var(--soft-coral);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -168,8 +78,8 @@ nav li:last-child a {
 }
 
 nav li:last-child a:hover {
-    background: rgba(255, 255, 255, 0.719);
-    color: var(--main-color);
+    background: var(--mint-green);
+    color: var(--pale-yellow);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -180,16 +90,16 @@ nav li:last-child a:hover {
     padding: 2rem;
     text-align: center;
     font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle, rgba(255, 128, 171, 0.08) 0%, transparent 70%);
+    background: white; /* tarjeta en blanco */
     border-radius: 15px;
-    box-shadow: 0 0 30px var(--contact-shadow);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
-/* Título principal */
 .about-us h2 {
-    color: var(--barbie);
+    color: var(--soft-coral);
     font-size: 2rem;
     margin-bottom: 1rem;
     position: relative;
@@ -202,12 +112,11 @@ nav li:last-child a:hover {
     display: block;
     width: 60px;
     height: 3px;
-    background: linear-gradient(135deg, var(--barbie), var(--pinky));
+    background: var(--mint-green);
     margin: 8px auto 0;
     border-radius: 2px;
 }
 
-/* Párrafos */
 .about-us p {
     color: var(--text-dark);
     font-size: 1.1rem;
@@ -216,16 +125,13 @@ nav li:last-child a:hover {
     padding: 0 1rem;
 }
 
-/* Negrita con color destacado */
 .about-us strong {
-    color: var(--barbie);
+    color: var(--soft-coral);
     font-weight: 600;
 }
 
-/* Hover sutil en la sección */
 .about-us:hover {
-    transform: translateY(-3px);
-    transition: transform var(--transition-time) ease;
+    transform: translateY(-5px);
 }
 
 /* Responsive */
@@ -243,4 +149,3 @@ nav li:last-child a:hover {
         font-size: 1rem;
     }
 }
-

@@ -1,38 +1,25 @@
 :root {
-    --main-color: #ff80ab;
-    --secondary-color: #ffe4ec;
-    --text-color: #333;
-    --banner-bg: #fff0f6;
-    --transition-time: 0.3s;
-
-    --pink-light: #ffe0ef;
-    --pinky: #fac4db;
-    --barbie: #e55e99;
-    --gray: #f5f5f5;
-    --text-dark: #333;
-    --contact-shadow: rgba(244, 63, 94, 0.2); /* mantenemos sombra rosada */
-
-    --yellow-bright: #F0C42D;   /* Amarillo brillante */
-    --pink-light: #F5A4B8;      /* Rosa suave */
-    --raspberry: #E43F4B;       /* Rojo frambuesa */
-    --white-cream: #F8F8F8;     /* Blanco crema */
-    --text-dark: #333333;       /* Texto oscuro */
+    --soft-coral: #fab3a7;      /* cálido y elegante */
+    --light-peach: #FFD8C2;     /* suave y delicado */
+    --mint-green: #add4b8;      /* fresco y veraniego */
+    --pale-yellow: #FFF3B0;     /* luminoso y sutil */
+    --text-dark: #333333;       /* legibilidad */
 }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url('img/plaza-san-nicolas.jpg') center center / cover fixed no-repeat;
-    color: var(--text-color);
+    background-color: var(--light-peach);
+    color: var(--text-dark);
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--pink-light);
+    background-color: var(--soft-coral);
     padding: 1px 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -40,13 +27,12 @@ header {
 
 .logo img {
     width: 90px;
-    transition: transform var(--transition-time) ease, filter var(--transition-time) ease;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .logo img:hover {
     transform: scale(1.1) rotate(-2deg);
-    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3)) brightness(1.1);
+    filter: brightness(1.1);
 }
 
 nav ul {
@@ -59,23 +45,17 @@ nav ul {
 }
 
 nav a {
-    color: var(--barbie);
+    color: var(--text-dark);
     text-decoration: none;
     font-weight: 600;
     position: relative;
-    transition: color var(--transition-time) ease;
+    transition: color 0.3s ease;
     font-size: 1rem;
     padding: 0.3rem 0;
 }
 
 nav a .log_in {
-    color: var(--gray);
-    text-decoration: none;
-    font-weight: 600;
-    position: relative;
-    transition: color var(--transition-time) ease;
-    font-size: 1rem;
-    padding: 0.3rem 0;
+    color: var(--text-dark);
 }
 
 nav a::after {
@@ -85,12 +65,12 @@ nav a::after {
     bottom: -4px;
     width: 0%;
     height: 2px;
-    background: var(--secondary-color);
-    transition: width var(--transition-time) ease;
+    background: var(--soft-coral);
+    transition: width 0.3s ease;
 }
 
 nav a:hover {
-    color: var(--main-color);
+    color: var(--mint-green);
 }
 
 nav a:hover::after {
@@ -98,34 +78,33 @@ nav a:hover::after {
 }
 
 nav li:last-child a {
-    background: linear-gradient(135deg, var(--barbie), var(--pinky));
-    color: var(--gray);
+    background-color: var(--mint-green);
+    color: var(--text-dark);
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    transition: all var(--transition-time) ease;
+    transition: all 0.3s ease;
 }
 
 nav li:last-child a:hover {
-    background: rgba(255, 255, 255, 0.719);
-    color: var(--main-color);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    background-color: var(--pale-yellow);
+    color: var(--text-dark);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
 /* Contact section */
 #contacto {
-    padding: 2rem 2rem;
+    padding: 2rem;
     text-align: center;
     max-width: 45rem;
     margin: 7rem auto;
     font-family: 'Inter', sans-serif;
     border-radius: 15px;
-    box-shadow: 0 0 30px var(--contact-shadow);
-    background: radial-gradient(circle, rgba(245, 66, 132, 0.1) 0%, transparent 70%);
+    box-shadow: 0 0 30px rgba(173, 212, 184, 0.3); /* mint-green con transparencia */
+    background: rgba(255, 255, 255, 0.6); /* fondo uniforme */
     position: relative;
     overflow: hidden;
 }
 
-/* Form inside contact */
 #contacto form {
     display: flex;
     flex-direction: column;
@@ -133,50 +112,43 @@ nav li:last-child a:hover {
     text-align: left;
 }
 
-/* Input fields */
 #contacto input,
 #contacto textarea {
     padding: 0.7rem;
-    border: 1px solid var(--barbie);
+    border: 1px solid var(--soft-coral);
     border-radius: 8px;
     font-size: 1rem;
 }
 
-/* Submit button */
 .login-button {
     width: 100%;
-    background: linear-gradient(135deg, var(--barbie), var(--pinky));
-    color: white;
+    background-color: var(--soft-coral);
+    color: var(--text-dark);
     font-weight: 500;
     padding: 0.75rem;
     border: none;
     border-radius: 0.5rem;
     font-size: 1rem;
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(236, 72, 153, 0.3);
+    box-shadow: 0 4px 14px rgba(173, 212, 184, 0.3);
     transition: all 0.2s ease;
 }
 
 .login-button:hover {
-    background: linear-gradient(135deg, var(--barbie), var(--pinky));
-    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+    background-color: var(--mint-green);
+    box-shadow: 0 6px 20px rgba(173, 212, 184, 0.4);
     transform: translateY(-1px);
 }
 
 /* Animated title in contact */
 #contacto h2 {
-    color: var(--barbie);
+    color: var(--soft-coral);
     animation: float 4s ease-in-out infinite;
     display: flex;
     justify-content: center;
 }
 
-/* keyframes for animation (added float animation to replace 'flotar') */
 @keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
