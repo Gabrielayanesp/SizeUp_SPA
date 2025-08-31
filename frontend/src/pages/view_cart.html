@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Metadatos para el navegador y SEO-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="communicative intermediary, chic and fashionable shopping.">
+    <meta name="keywords" content="clothing, plus size girls.">
+    <meta name="sitedomain" content="">
+    <meta name="organization" content="SizeUp">
+    <meta name="author" content="SizeUp">
+    <meta name="designer" content="SizeUp">
+    <meta name="copyright" content="© 2025 SizeUp. All rights reserved">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="15days">
+    <title>Dynamic Cart</title>
+    <link rel="stylesheet" href="../css/view_cart.css">
+    <link rel="shortcut icon" href="/public/assets/img/sizeUp-logo.png" type="image/x-icon">
+</head>
+<body>
+
+  <div class="header">
+    <span>Dynamic Cart</span>
+    <span>🛒</span>
+  </div>
+
+  <div class="envio">
+  <span>✔ Free shipping just for you</span>
+  <span>💵 Cash on Delivery</span>
+  <span>⏳ Delivery in 15 days</span>
+</div>
+
+    <!-- Cart with products -->
+    <div class="cart">
+        
+
+        <div class="product">
+        <img src="/public/assets/img/BRAGA-VESTIDO.webp" alt="Cream Set" width="200">
+        <label>
+            <input type="checkbox" class="item" data-price="65000">
+            <p><strong><figcaption>Warehouse Simple thing</figcaption></strong></p> <br>
+        </label>
+        <p><strong>Price:</strong> 65.000</p> <br>
+        <p><strong>Description:</strong> Dark blue knee-length jean panties.</p> <br>
+        </div>
+
+        <div class="product">
+        <img src="/public/assets/img/CORSET-BLANCO.webp" alt="corset" width="200">
+        <label>
+            <input type="checkbox" class="item" data-price="93000">
+            <p><strong><figcaption>Warehouse elenA</figcaption></strong></p> <br>
+        </label>
+        <p><strong>Price:</strong> 93.000</p> <br>
+        <p><strong>Description:</strong> Adjustable white corset with 3D details.</p> <br>
+        </div>
+
+        <div class="product">
+        <img src="/public/assets/img/FALDA-JEAN.webp" alt="Fan" width="200">
+        <label>
+            <input type="checkbox" class="item" data-price=" 75000">
+            <p><strong><figcaption>Warehouse elenA</figcaption></strong></p> <br>
+        </label>
+        <p><strong>Price:</strong> 75.000</p> <br>
+        <p><strong>Description:</strong> Dark blue jean skirt above the knee.</p> <br>
+        </div>
+
+            <div class="product">
+            <img src="/public/assets/img/SET-ROSA.webp" alt="Crossbody Bag" width="200">
+            <label>
+                <input type="checkbox" class="item" data-price=" 130000">
+                <p><strong><figcaption>Warehouse Be</figcaption></strong></p> <br>
+            </label>
+            <p><strong>Price:</strong>130.000</p> <br>
+            <p><strong>Description:</strong> Fuchsia body-hugging beach set with transparencies.</p> <br>
+            </div>
+        </div>
+
+        <div class="total">
+            <span>Total:</span>
+            <span id="total">$0</span>
+        </div>
+
+        <button class="btn" id="pedidoBtn">Place Order</button>
+
+         <!-- Modal -->
+        <div class="modal" id="modalPago">
+            <div class="modal-content">
+            <span class="close-btn" id="cerrarModal">&times;</span>
+            <h3>Select your payment method</h3>
+            <button class="efectivo" onclick="pagar('Cash')">Cash (Cash on Delivery)</button>
+            <button class="transferencia" onclick="pagar('Bank Transfer')">Bank Transfer</button>
+            <p id="mensajePago"></p>
+        </div>
+  </div>
+  
+  <script src="../js/view_cart.js"></script>
+</body>
+</html>
