@@ -236,6 +236,9 @@ This project was developed as part of an e-commerce solution for plus-size cloth
   - Kateryn Martinez, Clan Malecón  
   - Isabella Jiménez, Clan Manglar  
 
+- **Database**  
+  - Maria Gabriela Yanes, Clan Ciénaga  
+
 Special thanks to:
 - The Node.js and React developer communities for their excellent frameworks.
 - The contributors of the open-source libraries used in this project.

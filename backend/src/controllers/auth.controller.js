@@ -1,16 +1,16 @@
  // auth.controller.js
 const login = (req, res) => {
-    // Lógica para el inicio de sesión
+     // Logic for user login
     res.status(200).json({ message: 'Ruta de login' });
 };
 
 const register = (req, res) => {
-    // Lógica para el registro de usuario
+    // Logic for user registration
     res.send('Ruta de registro');
 };
 
 const logout = (req, res) => {
-    // Lógica para cerrar sesión
+    // Logic for logging out
     res.send('Ruta de logout');
 };
 
