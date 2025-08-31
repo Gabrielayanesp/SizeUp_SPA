@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Metadatos para el navegador y SEO-->
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="communicative intermediary, chic and fashionable shopping.">
+     <meta name="keywords" content="clothing, plus size girls.">
+     <meta name="sitedomain" content="">
+     <meta name="organization" content="SizeUp">
+     <meta name="author" content="SizeUp">
+     <meta name="designer" content="SizeUp">
+     <meta name="copyright" content="© 2025 SizeUp. All rights reserved">
+     <meta name="robots" content="index,follow">
+     <meta name="googlebot" content="index,follow">
+     <meta name="revisit-after" content="15days">
+  <title>Dynamic Cart</title>
+  <link rel="stylesheet" href="../css/view_carrito.css">
+</head>
+<body>
+
+  <div class="header">
+    <span>Dynamic Cart</span>
+    <span>🛒</span>
+  </div>
+
+  <div class="envio">✔ Free shipping just for you</div>
+
+  <!-- Cart with products -->
+  <div class="cart">
+    <h3>Cart</h3>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/80x80?text=Creams" alt="Cream Set">
+      <label>
+        <input type="checkbox" class="item" data-price="11190">
+        Set of 5 Creams
+      </label>
+      <span>$11.190</span>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/80x80?text=Blush" alt="Blush">
+      <label>
+        <input type="checkbox" class="item" data-price="6826">
+        Blush Palette
+      </label>
+      <span>$6.826</span>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/80x80?text=Fan" alt="Fan">
+      <label>
+        <input type="checkbox" class="item" data-price="12245">
+        Portable Fan
+      </label>
+      <span>$12.245</span>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/80x80?text=Bag" alt="Crossbody Bag">
+      <label>
+        <input type="checkbox" class="item" data-price="25013">
+        Crossbody Bag
+      </label>
+      <span>$25.013</span>
+    </div>
+  </div>
+
+  <div class="total">
+    <span>Total:</span>
+    <span id="total">$0</span>
+  </div>
+
+  <button class="btn" id="pedidoBtn">Place Order</button>
+
+  <!-- Modal -->
+  <div class="modal" id="modalPago">
+    <div class="modal-content">
+      <span class="close-btn" id="cerrarModal">&times;</span>
+      <h3>Select your payment method</h3>
+      <button class="efectivo" onclick="pagar('Cash')">Cash</button>
+      <button class="transferencia" onclick="pagar('Bank Transfer')">Bank Transfer</button>
+      <p id="mensajePago"></p>
+    </div>
+  </div>
+  
+  <script src="../js/carrito.js"></script>
+</body>
+</html>
