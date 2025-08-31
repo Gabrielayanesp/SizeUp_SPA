@@ -18,14 +18,16 @@ CREATE TABLE users (
     name VARCHAR(100) NOT NULL,
     email VARCHAR(150) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
+    role_id INT NOT NULL DEFAULT 2, -- Por defecto "Custo   
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE RESTRICT
 );
 
-INSERT INTO users (name, email, password) VALUES
-('Jessica Brown', 'jessica.brown@example.com', '$2b$10$tvgkTVHlIQQ92ngDONR2Bu9QOeKUk3.lP4QLs6yuYTIKzEDMTG/T.'),
-('Sophia Wilson', 'sophia.wilson@example.com', '$2b$10$tvgkTVHlIQQ92ngDONR2Bu9QOeKUk3.lP4QLs6yuYTIKzEDMTG/T.'),
-('Olivia Johnson', 'olivia.johnson@example.com', '$2b$10$tvgkTVHlIQQ92ngDONR2Bu9QOeKUk3.lP4QLs6yuYTIKzEDMTG/T.');
+INSERT INTO users (name, email, password, role_id) VALUES
+('Jessica Brown', 'jessica.brown@example.com', '$2b$10$tvgkTVHlIQQ92ngDONR2Bu9QOeKUk3.lP4QLs6yuYTIKzEDMTG/T.', 1),
+('Sophia Wilson', 'sophia.wilson@example.com', '$2b$10$tvgkTVHlIQQ92ngDONR2Bu9QOeKUk3.lP4QLs6yuYTIKzEDMTG/T.', 2),
+('Olivia Johnson', 'olivia.johnson@example.com', '$2b$10$tvgkTVHlIQQ92ngDONR2Bu9QOeKUk3.lP4QLs6yuYTIKzEDMTG/T.', 2);
 
 
 -- ========================================
