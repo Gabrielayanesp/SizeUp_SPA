@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             try {
+                console.log('Attempting login with email:', email);
                 const response = await fetch('http://localhost:3000/api/auth/login', {
                     method: 'POST',
                     headers: {
@@ -24,11 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify({ email, password }),
                 });
 
+                console.log('Response status:', response.status);
                 const data = await response.json();
+                console.log('Response data:', data);
 
                 if (response.ok) {
-                    // Guardar token en localStorage
-                    localStorage.setItem('token', data.token);
+                    // Guardar estado de login en localStorage
+                    localStorage.setItem('isLoggedIn', 'true');
                     localStorage.setItem('user', JSON.stringify(data.user));
 
                     // Redirigir a la página principal o catálogo
