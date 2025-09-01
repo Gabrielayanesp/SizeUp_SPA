@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
 
                 if (response.ok) {
-                    // Guardar token en localStorage
-                    localStorage.setItem('token', data.token);
+                    // Guardar estado de login en localStorage
+                    localStorage.setItem('isLoggedIn', 'true');
                     localStorage.setItem('user', JSON.stringify(data.user));
 
                     // Redirigir a la página principal o catálogo
