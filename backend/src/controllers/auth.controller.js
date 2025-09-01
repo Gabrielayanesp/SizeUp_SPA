@@ -1,6 +1,12 @@
+// here we import necessary modules and models to handle authentication logic in our application using bcrypt for password 
+// hashing and jwt for token generation and verification
+
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user.model');
+
+// here we define the login function to authenticate users, generate a JWT token upon successful login, and handle errors appropriately to ensure a
+// smooth user experience and security because we are dealing with sensitive information
 
 const login = async (req, res) => {
     try {
@@ -41,6 +47,9 @@ const login = async (req, res) => {
         res.status(500).json({ message: 'Error interno del servidor' });
     }
 };
+
+// here we define the register function to handle new user registrations, ensuring that user data is validated,
+//  passwords are hashed securely, and a JWT token is generated for immediate authentication after registration    
 
 const register = async (req, res) => {
     try {
@@ -85,10 +94,18 @@ const register = async (req, res) => {
     }
 };
 
+// here we define the logout function to handle user logout requests. Since we are using JWT for authentication,
+// // the logout process is managed on the client side by simply deleting the token. 
+// // This function provides a response indicating a successful logout.     
+
+
 const logout = (req, res) => {
     // Para JWT, el logout se maneja del lado del cliente eliminando el token
     res.json({ message: 'Sesión cerrada exitosamente' });
 };
+
+// here we export the functions to be used in our routes, allowing us to keep our code organized and modular
+// also making it easier to maintain and test individual components of our authentication system
 
 module.exports = {
     login,
