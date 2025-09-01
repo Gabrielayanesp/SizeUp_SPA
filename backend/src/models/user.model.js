@@ -17,20 +17,33 @@ const User = {
     },
 
     create: async (user) => {
-        const { name, email, password } = user;
+        const { name, email, password, role_id } = user;
         const [result] = await pool.query(
-            'INSERT INTO users (name, email, password) VALUES (?, ?, ?)',
-            [name, email, password]
+            'INSERT INTO users (name, email, password, role_id) VALUES (?, ?, ?, ?)',
+            [name, email, password, role_id || 2]
         );
         return result.insertId;
     },
 
     update: async (id, user) => {
-        const { name, email, password } = user;
-        await pool.query(
-            'UPDATE users SET name = ?, email = ?, password = ? WHERE id = ?',
-            [name, email, password, id]
-        );
+        const { name, email, password, role_id } = user;
+        let query = 'UPDATE users SET name = ?, email = ?';
+        let params = [name, email];
+
+        if (password) {
+            query += ', password = ?';
+            params.push(password);
+        }
+
+        if (role_id) {
+            query += ', role_id = ?';
+            params.push(role_id);
+        }
+
+        query += ' WHERE id = ?';
+        params.push(id);
+
+        await pool.query(query, params);
         return true;
     },
 

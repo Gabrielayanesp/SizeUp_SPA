@@ -5,30 +5,7 @@ DROP DATABASE IF EXISTS ecommerce;
 CREATE DATABASE ecommerce
   DEFAULT CHARACTER SET utf8mb4;
 
-
 USE ecommerce;
-
--- ========================================
--- TABLE: users
--- ========================================
-DROP TABLE IF EXISTS users;
-
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(150) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,   
-    role_id INT NOT NULL DEFAULT 2, -- Costumer by default
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE RESTRICT
-);
-
-INSERT INTO users (name, email, password, role_id) VALUES
-('Jessica Brown', 'jessica.brown@example.com', '$2b$10$tvgkTVHlIQQ92ngDONR2Bu9QOeKUk3.lP4QLs6yuYTIKzEDMTG/T.', 1),
-('Sophia Wilson', 'sophia.wilson@example.com', '$2b$10$tvgkTVHlIQQ92ngDONR2Bu9QOeKUk3.lP4QLs6yuYTIKzEDMTG/T.', 2),
-('Olivia Johnson', 'olivia.johnson@example.com', '$2b$10$tvgkTVHlIQQ92ngDONR2Bu9QOeKUk3.lP4QLs6yuYTIKzEDMTG/T.', 2);
-
 
 -- ========================================
 -- TABLE: roles
@@ -46,6 +23,26 @@ INSERT INTO roles (name) VALUES
 ('Admin'),
 ('Customer');
 
+-- ========================================
+-- TABLE: users
+-- ========================================
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,   
+    role_id INT NOT NULL DEFAULT 2, -- Customer by default
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE RESTRICT
+);
+
+INSERT INTO users (name, email, password, role_id) VALUES
+('Jessica Brown', 'jessica.brown@example.com', '$2b$10$tvgkTVHlIQQ92ngDONR2Bu9QOeKUk3.lP4QLs6yuYTIKzEDMTG/T.', 1),
+('Sophia Wilson', 'sophia.wilson@example.com', '$2b$10$tvgkTVHlIQQ92ngDONR2Bu9QOeKUk3.lP4QLs6yuYTIKzEDMTG/T.', 2),
+('Olivia Johnson', 'olivia.johnson@example.com', '$2b$10$tvgkTVHlIQQ92ngDONR2Bu9QOeKUk3.lP4QLs6yuYTIKzEDMTG/T.', 2);
 
 -- ========================================
 -- TABLE: products
@@ -66,7 +63,6 @@ INSERT INTO products (name, description, price, stock) VALUES
 ('Plus Size Floral Dress', 'Elegant floral dress for plus size women, perfect for casual and party wear.', 49.99, 50),
 ('Curvy Fit Jeans', 'Comfortable plus size jeans with stretchable fabric.', 39.99, 100),
 ('Oversized T-Shirt', 'Casual oversized t-shirt for a relaxed look.', 19.99, 150);
-
 
 -- ========================================
 -- TABLE: product_variants
@@ -98,7 +94,6 @@ INSERT INTO product_variants (product_id, name, value, price, stock) VALUES
 (3, 'Color', 'White', 19.99, 50),
 (3, 'Color', 'Black', 19.99, 50);
 
-
 -- ========================================
 -- TABLE: orders
 -- ========================================
@@ -117,7 +112,6 @@ CREATE TABLE orders (
 INSERT INTO orders (user_id, total_amount, status) VALUES
 (1, 89.98, 'paid'),
 (2, 39.99, 'pending');
-
 
 -- ========================================
 -- TABLE: order_items
@@ -140,7 +134,6 @@ INSERT INTO order_items (order_id, product_id, quantity, price) VALUES
 (1, 1, 1, 49.99),
 (1, 2, 1, 39.99),
 (2, 2, 1, 39.99);
-
 
 -- ========================================
 -- TABLE: cart_items
