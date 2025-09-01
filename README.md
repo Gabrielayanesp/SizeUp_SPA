@@ -1,5 +1,5 @@
 # Plus Size Clothing Store Project
-
+# Clan: Cienaga
 ## Description
 
 Welcome to the **SizeUp** clothing store project! This is a single-page application (SPA) e-commerce platform that allows users to browse a catalog of plus-size clothing products, add items to the shopping cart, manage their accounts, and efficiently process orders.
