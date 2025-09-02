@@ -1,3 +1,7 @@
+// here we import the CartItem model to interact with the cart_items table in the database and perform CRUD operations
+// is a controller module that defines functions to handle HTTP requests related to cart items, including getting all items, getting an item by ID, creating, updating, and deleting cart items.
+//  Each function handles errors and sends appropriate HTTP responses
+
 const CartItem = require('../models/cartItem.model');
 
 const cartItemController = {
@@ -22,6 +26,10 @@ const cartItemController = {
         }
     },
 
+//  here we define the createCartItem function to handle the creation of new cart items, ensuring that all required fields are provided and responding with appropriate
+// status codes and messages based on the operation's success or failure then we define the updateCartItem function to handle updates to existing cart items, validating input and managing errors effectively to maintain data integrity and provide clear feedback to the client
+// //  finally, we define the deleteCartItem function to remove cart items by ID, ensuring proper error handling and response messaging to confirm the deletion or report issues   
+
     createCartItem: async (req, res) => {
         const { user_id, product_id, quantity } = req.body;
 
@@ -37,6 +45,9 @@ const cartItemController = {
         }
     },
 
+    // here we define the function to handle the update of cart items this function validates the input, performs the update operation, and manages
+    //  errors effectively to ensure data integrity and provide clear feedback to the client
+
     updateCartItem: async (req, res) => {
         try {
             const { id } = req.params;
@@ -46,6 +57,9 @@ const cartItemController = {
             res.status(500).json({ message: 'Error updating cart item', error: error.message });
         }
     },
+
+    // here we define the function to handle the deletion of cart items by ID, ensuring proper error handling and response messaging to confirm the deletion or report issues this function interacts with the CartItem model to perform
+    //  the delete operation and sends appropriate HTTP responses based on the outcome
 
     deleteCartItem: async (req, res) => {
         try {
@@ -57,5 +71,8 @@ const cartItemController = {
         }
     }
 };
+
+// here we export the cartItemController object to be used in our routes, allowing us to keep our code organized and modular this also 
+// makes it easier to maintain and test individual components of our cart item management system
 
 module.exports = cartItemController;
