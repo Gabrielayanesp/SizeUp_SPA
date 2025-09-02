@@ -1,0 +1,225 @@
+:root {
+    --soft-coral: #fab3a7;      /* Warm and elegant */
+    --light-peach: #FFD8C2;     /* Soft and delicate */
+    --mint-green: #add4b8;      /* Fresh and summery */
+    --pale-yellow: #FFF3B0;     /* Light and subtle */
+    --text-dark: #333333;       /* Readable text color */
+}
+
+/* Basic reset */
+* {
+    box-sizing: border-box;      /* Include padding and border in element's width/height */
+    margin: 0;                   /* Remove default margin */
+    padding: 0;                  /* Remove default padding */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Body font */
+    background-color: var(--light-peach); /* Page background color */
+    color: var(--text-dark);            /* Default text color */
+    padding: 20px;                      /* Page padding */
+}
+
+/* Header */
+.header {
+    background-color: var(--soft-coral); /* Header background */
+    color: white;                         /* Header text color */
+    padding: 16px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;       /* Space between logo/title and buttons */
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Back to catalog button */
+.back-button {
+    background-color: var(--mint-green); /* Button background */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 12px;                 /* Rounded button */
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s ease;           /* Smooth hover effect */
+}
+
+.back-button:hover {
+    background-color: var(--pale-yellow); /* Hover background */
+    color: var(--text-dark);               /* Hover text color */
+    transform: translateY(-2px);           /* Slight lift on hover */
+}
+
+/* Free shipping notice */
+.envio {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 5;                        /* Vertical spacing */
+    text-align: center;                     /* Centered text */
+}
+
+.envio span {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+/* Cart container */
+#cart-container {
+    display: flex;
+    flex-wrap: wrap;                       /* Allow wrapping */
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Individual product card */
+.shop-card {
+    background-color: white;
+    border-radius: 12px;                   /* Rounded corners */
+    padding: 16px;
+    width: 200px;                           /* Fixed width for cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Soft shadow */
+    transition: transform 0.2s ease;       /* Smooth hover effect */
+    text-align: center;
+}
+
+.shop-card:hover {
+    transform: translateY(-5px);           /* Lift effect on hover */
+}
+
+/* Image inside card */
+.shop-card img {
+    border-radius: 12px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;                      /* Cover container while maintaining aspect ratio */
+}
+
+/* Price and description */
+.shop-card .product-price,
+.shop-card p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Remove from cart button */
+.remove-from-cart {
+    background-color: #ff7f7f;              /* Red background */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;             /* Smooth hover effect */
+}
+
+.remove-from-cart:hover {
+    background-color: #ff4c4c;             /* Darker red on hover */
+    transform: translateY(-2px);           /* Slight lift */
+}
+
+/* Total summary card */
+.total {
+    background-color: white;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;         /* Space between total label and amount */
+    align-items: center;
+}
+
+/* Place order button */
+.btn {
+    width: 100%;
+    padding: 14px 0;
+    background-color: var(--mint-green);
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--pale-yellow);   /* Hover background */
+    color: var(--text-dark);                /* Hover text color */
+    transform: translateY(-3px);            /* Lift effect */
+}
+
+/* Modal */
+.modal {
+    display: none;                          /* Hidden by default */
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;                         /* Scroll if needed */
+    background-color: rgba(0,0,0,0.5);      /* Semi-transparent background */
+}
+
+.modal-content {
+    background-color: var(--light-peach);  /* Modal background */
+    margin: 10% auto;                      /* Center modal */
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Modal buttons */
+.modal button {
+    background-color: var(--mint-green);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    margin: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;        /* Smooth hover effect */
+}
+
+.modal button:hover {
+    transform: translateY(-2px);           /* Slight lift */
+    background-color: var(--pale-yellow);  /* Hover color */
+}
+
+/* Modal input fields */
+.modal-content input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;                          /* Remove default outline */
+}
+
+.modal-content input:focus {
+    border-color: var(--soft-coral);        /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(250, 179, 167, 0.6); /* Soft glow */
+}
