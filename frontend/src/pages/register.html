@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Metadatos para el navegador y SEO-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="communicative intermediary, chic and fashionable shopping.">
+    <meta name="keywords" content="clothing, plus size girls.">
+    <meta name="sitedomain" content="">
+    <meta name="organization" content="SizeUp">
+    <meta name="author" content="SizeUp">
+    <meta name="designer" content="SizeUp">
+    <meta name="copyright" content="© 2025 SizeUp. All rights reserved">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="15days">
+    <title>sizeUp | Register</title>
+    <link rel="stylesheet" href="/src/css/register.css" />
+    <script type="text/javascript" src="/src/js/form_validation.js" defer></script>
+    <link rel="shortcut icon" href="/public/assets/img/sizeUp-logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login">
+            <!-- Informative or decorative section (you can use or remove) -->
+            <section class="section">
+                <div class="section-content">
+                    <div class="brand-section">
+                        <h1 class="brand-title">Register</h1>
+                        <p class="brand-subtitle">Join our community and enjoy exclusive benefits</p>
+                    </div>
+                    <div class="info-card">
+                        <p class="info-text">
+                            By registering, you will have access to exclusive content, special offers, and much more.
+                        </p>
+                        <div class="decorative-elements">
+                            <div class="circle circle-large"></div>
+                            <div class="circle circle-medium"></div>
+                            <div class="circle circle-small"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Registration form -->
+            <section class="form-section">
+                <div class="login-card">
+
+                    <header class="card-header">
+                        <h2 class="welcome-title">Create Account</h2>
+                        <p class="welcome-subtitle">It's quick and easy</p>
+                    </header>
+
+                    <div class="card-content">
+                        <form class="login-form" id="registerForm">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" id="firstname_input" name="name" class="form-input" placeholder="Your full name" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email_input" name="email" class="form-input" placeholder="example@email.com" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" id="password_input" name="password" class="form-input" placeholder="********" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" id="repeat-password_input" name="confirmPassword" class="form-input" placeholder="********" required />
+                            </div>
+                            <button type="submit" class="login-button">Register</button>
+                        </form>
+
+                        <div class="form-footer">
+                            <p id="error-message"></p>
+                            <p>Already have an account? <a href="/src/pages/login.html" class="shop-highlight">Log in</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+    <script src="/src/js/register.js"></script>
+    <script src="/src/js/auth_guard.js"></script>
+</body>
+
+</html>

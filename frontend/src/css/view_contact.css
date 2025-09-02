@@ -1,0 +1,154 @@
+:root {
+    --soft-coral: #fab3a7;      /* cálido y elegante */
+    --light-peach: #FFD8C2;     /* suave y delicado */
+    --mint-green: #add4b8;      /* fresco y veraniego */
+    --pale-yellow: #FFF3B0;     /* luminoso y sutil */
+    --text-dark: #333333;       /* legibilidad */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--light-peach);
+    color: var(--text-dark);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--soft-coral);
+    padding: 1px 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 90px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1) rotate(-2deg);
+    filter: brightness(1.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    padding: 0.3rem 0;
+}
+
+nav a .log_in {
+    color: var(--text-dark);
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: var(--soft-coral);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--mint-green);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav li:last-child a {
+    background-color: var(--mint-green);
+    color: var(--text-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+nav li:last-child a:hover {
+    background-color: var(--pale-yellow);
+    color: var(--text-dark);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* Contact section */
+#contacto {
+    padding: 2rem;
+    text-align: center;
+    max-width: 45rem;
+    margin: 7rem auto;
+    font-family: 'Inter', sans-serif;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(173, 212, 184, 0.3); /* mint-green con transparencia */
+    background: rgba(255, 255, 255, 0.6); /* fondo uniforme */
+    position: relative;
+    overflow: hidden;
+}
+
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+}
+
+#contacto input,
+#contacto textarea {
+    padding: 0.7rem;
+    border: 1px solid var(--soft-coral);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.login-button {
+    width: 100%;
+    background-color: var(--soft-coral);
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(173, 212, 184, 0.3);
+    transition: all 0.2s ease;
+}
+
+.login-button:hover {
+    background-color: var(--mint-green);
+    box-shadow: 0 6px 20px rgba(173, 212, 184, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Animated title in contact */
+#contacto h2 {
+    color: var(--soft-coral);
+    animation: float 4s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
