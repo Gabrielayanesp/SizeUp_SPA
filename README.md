@@ -245,4 +245,3 @@ Special thanks to:
 
 ---
 
-Thank you for using **SizeUp**! If you have any questions or suggestions, feel free to reach out to us.
